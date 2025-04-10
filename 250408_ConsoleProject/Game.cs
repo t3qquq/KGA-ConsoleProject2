@@ -31,9 +31,7 @@
 					player.ShowStatus();
 					break;
 				case "3":
-					Console.Write("사용할 아이템 이름: ");
-					string itemName = Console.ReadLine();
-					player.UseItem(itemName);
+					player.SelectAndUseItem();
 					break;
 				case "0":
 					Console.WriteLine("게임을 종료합니다.");

@@ -21,7 +21,7 @@ namespace _250408_ConsoleProject
 
 		public void Enter(Player player)
 		{
-			Console.WriteLine($"\n🌲 [{Name}] 지역에 입장했습니다!");
+			Console.WriteLine($"[{Name}] 지역에 입장했습니다!");
 			if (RegionBoss != null)
 			{
 				Battle(player, RegionBoss);
@@ -35,14 +35,14 @@ namespace _250408_ConsoleProject
 
 		private void Battle(Player player, Monster monster)
 		{
-			Console.WriteLine($"⚔️ {monster.Name}과(와) 전투를 시작합니다!");
+			Console.WriteLine($"{monster.Name}과(와) 전투를 시작합니다!");
 
 			bool defending = false;
 
 			while (player.HP > 0 && monster.HP > 0)
 			{
-				Console.WriteLine($"\n🧍‍♂️ {player.Name} - HP: {player.HP}");
-				Console.WriteLine($"👹 {monster.Name} - HP: {monster.HP}");
+				Console.WriteLine($"{player.Name} - HP: {player.HP}");
+				Console.WriteLine($"{monster.Name} - HP: {monster.HP}");
 				Console.WriteLine("[1] 공격 [2] 방어 [3] 아이템 사용");
 				string input = Console.ReadLine();
 
@@ -58,9 +58,7 @@ namespace _250408_ConsoleProject
 						Console.WriteLine($"{player.Name}는 방어 태세를 취했습니다!");
 						break;
 					case "3":
-						Console.Write("사용할 아이템 이름: ");
-						string itemName = Console.ReadLine();
-						player.UseItem(itemName);
+						player.SelectAndUseItem();
 						break;
 					default:
 						Console.WriteLine("잘못된 입력입니다.");
@@ -86,7 +84,7 @@ namespace _250408_ConsoleProject
 
 				if (player.HP <= 0)
 				{
-					Console.WriteLine("\n💀 전투에서 패배했습니다...");
+					Console.WriteLine(" 전투에서 패배했습니다...");
 				}
 			}
 		}

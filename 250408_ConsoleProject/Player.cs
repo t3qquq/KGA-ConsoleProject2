@@ -31,13 +31,48 @@ namespace _250408_ConsoleProject
 
 		public void ShowStatus()
 		{
-			Console.WriteLine($"\n🧍‍♂️ {Name} - HP: {HP}, ATK: {Attack}, DEF: {Defense}");
-			Console.WriteLine("🎒 인벤토리:");
+			Console.Clear();
+			Console.WriteLine($"{Name} - HP: {HP}, ATK: {Attack}, DEF: {Defense}");
+			Console.WriteLine("인벤토리:");
 			foreach (var item in Inventory)
 			{
 				Console.WriteLine("- " + item.Name);
 			}
 		}
+
+		public void SelectAndUseItem()
+		{
+			if (Inventory.Count == 0)
+			{
+				Console.WriteLine("사용할 수 있는 아이템이 없습니다.");
+				return;
+			}
+
+			Console.WriteLine("사용할 아이템을 선택하세요:");
+			for (int i = 0; i < Inventory.Count; i++)
+			{
+				Console.WriteLine($"[{i + 1}] {Inventory[i].Name}");
+			}
+
+			if (int.TryParse(Console.ReadLine(), out int choice))
+			{
+				if (choice >= 1 && choice <= Inventory.Count)
+				{
+					Item selectedItem = Inventory[choice - 1];
+					selectedItem.Use(this);
+					Inventory.RemoveAt(choice - 1);
+				}
+				else
+				{
+					Console.WriteLine("잘못된 선택입니다.");
+				}
+			}
+			else
+			{
+				Console.WriteLine("숫자를 입력해주세요.");
+			}
+		}
+
 	}
 
 }
