@@ -45,7 +45,7 @@ namespace _250408_ConsoleProject
 				Console.WriteLine($"{monster.Name} - HP: {monster.HP}");
 				Console.WriteLine("[1] 공격 [2] 방어 [3] 아이템 사용");
 				string input = Console.ReadLine();
-
+				Console.Clear();
 				switch (input)
 				{
 					case "1":

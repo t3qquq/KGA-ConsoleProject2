@@ -53,9 +53,16 @@ namespace _250408_ConsoleProject
 			{
 				Console.WriteLine($"[{i + 1}] {Inventory[i].Name}");
 			}
+				Console.WriteLine($"[0] 취소");
+			Console.Write("선택: ");
 
 			if (int.TryParse(Console.ReadLine(), out int choice))
 			{
+				if (choice == 0)
+				{
+					Console.WriteLine("아이템 사용을 취소했습니다.");
+					return;
+				}
 				if (choice >= 1 && choice <= Inventory.Count)
 				{
 					Item selectedItem = Inventory[choice - 1];

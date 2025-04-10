@@ -14,6 +14,7 @@
 
 		private void ShowMainMenu()
 		{
+			Console.Clear();
 			Console.WriteLine("※ 메인 메뉴 ※");
 			Console.WriteLine("[1] 지역 탐험");
 			Console.WriteLine("[2] 상태 보기");
