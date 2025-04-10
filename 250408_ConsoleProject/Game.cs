@@ -14,13 +14,14 @@
 
 		private void ShowMainMenu()
 		{
-			Console.WriteLine("\n🏰 메인 메뉴");
+			Console.WriteLine("※ 메인 메뉴 ※");
 			Console.WriteLine("[1] 지역 탐험");
 			Console.WriteLine("[2] 상태 보기");
 			Console.WriteLine("[3] 아이템 사용");
 			Console.WriteLine("[0] 종료");
 
 			string input = Console.ReadLine();
+			Console.Clear();
 			switch (input)
 			{
 				case "1":

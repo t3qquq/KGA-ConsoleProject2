@@ -9,7 +9,7 @@ namespace _250408_ConsoleProject
 {
 	public class Player
 	{
-		public string Name { get; } = "용사";
+		public string Name { get; } = "플레이어";
 		public int HP { get; set; } = 100;
 		public int Attack { get; } = 12;
 		public int Defense { get; } = 6;
