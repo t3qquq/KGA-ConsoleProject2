@@ -38,6 +38,7 @@ namespace _250408_ConsoleProject
 			{
 				Console.WriteLine("- " + item.Name);
 			}
+			Console.ReadLine();
 		}
 
 		public void SelectAndUseItem()
